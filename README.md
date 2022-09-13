@@ -1,1 +1,2 @@
-# Lista de exercícios em Haskell
+# Exercícios em Haskell
+Lista de Exercícios da cadeira de Programação III
