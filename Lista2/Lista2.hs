@@ -24,6 +24,7 @@ seqRaiz6 1 = sqrt 6
 seqRaiz6 n = sqrt (6 + seqRaiz6 (n-1))
 
 -- Maior --
+maiorDaLista :: [Int] -> (Int, Int)
 maiorDaLista l = maiorDaListaAux (tail novaLista) (head novaLista)
   where
     novaLista = zip l [0 ..]
@@ -47,15 +48,19 @@ conv (n:ns) = dic10 !! n : conv ns
   where dic10 = ["zero", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove"]
 
 -- Deletar Posição --
+delPosicaoN :: Int -> [Int] -> [Int]
 delPosicaoN n l = take n l ++ drop (n+1) l
 
 -- Inserir Posição --
+inserirPosicaoN :: Int -> Int -> [Int] -> [Int]
 inserirPosicaoN n v l = take n l ++ [v] ++ drop n l
 
 -- Posição --
+posicaoN :: Int -> [Int] -> Int
 posicaoN n l = head $ drop n l
 
 -- Merge --
+merge :: [Int] -> [Int] -> [Int]
 merge l1 [] = l1
 merge [] l2 = l2
 merge (x:xs) (y:ys)
