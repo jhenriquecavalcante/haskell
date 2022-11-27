@@ -30,16 +30,18 @@ maiorDaLista l = maiorDaListaAux (tail novaLista) (head novaLista)
     novaLista = zip l [0 ..]
 
 maiorDaListaAux [] maiorAtual = maiorAtual
-maiorDaListaAux (x:xs) maiorAtual = if fst x > fst maiorAtual
-                                    then maiorDaListaAux xs x
-                                    else maiorDaListaAux xs maiorAtual
+maiorDaListaAux (x:xs) maiorAtual =
+  if fst x > fst maiorAtual
+    then maiorDaListaAux xs x
+    else maiorDaListaAux xs maiorAtual
 
 maiorDalista2 l = maiorDaListaAux2 (tail l) (head l, 0) 0
 
 maiorDaListaAux2 [] tupla i = tupla
-maiorDaListaAux2 (x:xs) tupla i = if x > fst tupla
-                                  then maiorDaListaAux2 xs (x,i+1) (i+1)
-                                  else maiorDaListaAux2 xs tupla (i+1)
+maiorDaListaAux2 (x:xs) tupla i =
+  if x > fst tupla
+    then maiorDaListaAux2 xs (x,i+1) (i+1)
+    else maiorDaListaAux2 xs tupla (i+1)
 
 -- Conversão --
 conv :: [Int] -> [String]
